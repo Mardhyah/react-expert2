@@ -1,14 +1,4 @@
-/**
- * Test scenarios for threadDetailReducer function
- *
- * - threadDetailReducer function
- *   - should return initial state when given unknown action
- *   - should return threadDetail when given by RECEIVE_THREAD_DETAIL action
- *   - should handle CREATE_COMMENT action
- *   - should handle UP_VOTE_THREAD_DETAIL action
- *   - should handle DOWN_VOTE_THREAD_DETAIL action
- *   - should handle NEUTRALIZE_VOTE_THREAD_DETAIL action
- */
+
 import { describe, expect, it } from 'vitest';
 import threadDetailReducer from './reducer';
 import { ActionType } from './actions';

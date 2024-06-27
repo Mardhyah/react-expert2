@@ -1,10 +1,4 @@
-/**
- * Test Scenario for Thunk Function
- *
- * - asyncPopulateUsersAndThreads thunk
- *  - Should dispatch action correctly when data fetching is successful
- *  - Should dispatch action and call alert correctly when data fetching fails
- */
+
 import {
     describe, beforeEach, afterEach, it, vi, expect,
 } from 'vitest';
