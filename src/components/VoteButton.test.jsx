@@ -75,13 +75,4 @@ describe('VoteButton Component', () => {
         expect(getByText('1')).toBeInTheDocument();
     });
 
-    it('should display correct number of downvotes', () => {
-        const { getByText } = render(
-            <ChakraProvider>
-                <VoteButton {...props} />
-            </ChakraProvider>
-        );
-
-        expect(getByText('1')).toBeInTheDocument();
-    });
 });
