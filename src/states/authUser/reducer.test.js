@@ -18,9 +18,9 @@ describe('authUserReducer funtion', () => {
             type: ActionType.SET_AUTH_USER,
             payload: {
                 authUser: {
-                    id: 'john_kim',
-                    name: 'John kim',
-                    email: 'jkim@example.com',
+                    id: 'test123',
+                    name: 'test123',
+                    email: 'test123@example.com',
                     avatar: 'https://generated-image-url.jpg',
                 },
             },

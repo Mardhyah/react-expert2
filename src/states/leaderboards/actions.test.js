@@ -18,8 +18,8 @@ const fakeLeaderboardsResponse = [
   {
     user: {
       id: 'users-1',
-      name: 'John Doe',
-      email: 'john@example.com',
+      name: 'mar',
+      email: 'mar@example.com',
       avatar: 'https://generated-image-url.jpg',
     },
     score: 10,
@@ -27,8 +27,8 @@ const fakeLeaderboardsResponse = [
   {
     user: {
       id: 'users-2',
-      name: 'Jane Doe',
-      email: 'jane@example.com',
+      name: 'yah',
+      email: 'yah@example.com',
       avatar: 'https://generated-image-url.jpg',
     },
     score: 5,
