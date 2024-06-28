@@ -2,8 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { ActionType } from './actions';
 import authUserReducer from './reducer';
 
-
-describe('authUserReducer funtion', () => {
+describe('authUserReducer function', () => {
     it('should return the initial state when given by unknown action', () => {
         const initialState = null;
         const action = { type: 'UNKNOWN' };
@@ -29,6 +28,7 @@ describe('authUserReducer funtion', () => {
         const nextState = authUserReducer(initialState, action);
         expect(nextState).toBe(action.payload.authUser);
     });
+
     it('should return null when given by authUser/unset action', () => {
         const initialState = null;
         const action = {
@@ -37,6 +37,7 @@ describe('authUserReducer funtion', () => {
                 authUser: null,
             },
         };
+
         const nextState = authUserReducer(initialState, action);
         expect(nextState).toBeNull();
     });

@@ -1,3 +1,15 @@
+/**
+ * Test scenarios for threadsReducer function
+ *
+ * - threadsReducer function
+ *   - should return initial state when given unknown action
+ *   - should return threads when given by RECEIVE_THREADS action
+ *   - should handle CREATE_THREAD action
+ *   - should handle UP_VOTE_THREAD action
+ *   - should handle DOWN_VOTE_THREAD action
+ *   - should handle NEUTRALIZE_VOTE_THREAD action
+ */
+
 import { ActionType } from './actions';
 
 export default function threadsReducer(threads = [], action = {}) {

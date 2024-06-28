@@ -1,3 +1,10 @@
+/**
+ * Test scenarios for usersReducer function
+ *
+ * - usersReducer function
+ *   - should return initial state when given unknown action
+ *   - should return users when given by RECEIVE_USERS action
+ */
 
 import { describe, expect, it } from 'vitest';
 import usersReducer from './reducer';
