@@ -62,36 +62,29 @@ describe('asyncPopulateUsersAndThreads thunk', () => {
     let originalAlert;
 
     beforeEach(() => {
-        // Backup original functions
         originalFetchAllUsers = apiService.fetchAllUsers;
         originalFetchAllThreads = apiService.fetchAllThreads;
         originalAlert = global.alert;
 
-        // Mock the API functions
         apiService.fetchAllUsers = vi.fn();
         apiService.fetchAllThreads = vi.fn();
 
-        // Mock the alert function
         global.alert = vi.fn();
     });
 
     afterEach(() => {
-        // Restore original functions
         apiService.fetchAllUsers = originalFetchAllUsers;
         apiService.fetchAllThreads = originalFetchAllThreads;
         global.alert = originalAlert;
     });
 
     it('should dispatch actions correctly when data fetching is successful', async () => {
-        // Arrange
         apiService.fetchAllUsers.mockResolvedValue(fakeUsersResponse);
         apiService.fetchAllThreads.mockResolvedValue(fakeThreadsResponse);
         const dispatch = vi.fn();
 
-        // Act
         await asyncPopulateUsersAndThreads()(dispatch);
 
-        // Assert
         expect(dispatch).toHaveBeenCalledWith(showLoading());
         expect(dispatch).toHaveBeenCalledWith(receiveUsersActionCreator(fakeUsersResponse));
         expect(dispatch).toHaveBeenCalledWith(receiveThreadsActionCreator(fakeThreadsResponse));
@@ -99,15 +92,12 @@ describe('asyncPopulateUsersAndThreads thunk', () => {
     });
 
     it('should dispatch actions and call alert correctly when data fetching fails', async () => {
-        // Arrange
         apiService.fetchAllUsers.mockRejectedValue(fakeErrorResponse);
         apiService.fetchAllThreads.mockRejectedValue(fakeErrorResponse);
         const dispatch = vi.fn();
 
-        // Act
         await asyncPopulateUsersAndThreads()(dispatch);
 
-        // Assert
         expect(dispatch).toHaveBeenCalledWith(showLoading());
         expect(dispatch).toHaveBeenCalledWith(hideLoading());
         expect(global.alert).toHaveBeenCalledWith(fakeErrorResponse.message);
